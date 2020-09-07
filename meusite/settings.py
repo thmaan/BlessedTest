@@ -26,18 +26,21 @@ SECRET_KEY = 'hu_ufikffnj3k(o8775w^vens9^nn#i=1q6akvsmq1!(74#+t-'
 DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
-
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
 
 # Application definition
 
 INSTALLED_APPS = [
+    'polls.apps.PollsConfig',
+    'recipe_site.apps.RecipeSiteConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'recipe_site.apps.RecipeSiteConfig',
+    
 ]
 
 MIDDLEWARE = [
@@ -120,3 +123,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
